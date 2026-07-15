@@ -1,4 +1,5 @@
 #include "game.h"
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -6,7 +7,7 @@
 class Player {
 	public:
 		std::string name;
-		int health;
+		int health = 100;
 };
 
 class Enemy {
@@ -119,9 +120,9 @@ void zombieReveal() {
 	Enemy zombie;
 	zombie.name = "Zombie";
 	zombie.health = 25;
-	zombie.damage = 5;
+	zombie.damage = 30;
 
-	std::cout << "The door busts open. A zombie walks through, looking around.\n";
+	std::cout << "The door breaks open. A zombie walks through, looking around.\n";
 	std::cout << "The zombie sees you and rushes towards you. What are you going to do?\n\n";
 
 	std::cout << "1. Attack the zombie with your weapon\n";
@@ -143,7 +144,23 @@ void attackZombieWithWeapon() {
 	system("clear");
 	int choice;
 
+	Player player;
+	player.health = 75
+
+	std::cout << "Your health: " << player.health << '\n\n';
+
     std::cout << "You make an attempt to attack the zombie with your " << inventory[0].name << ".\n";
+void preStartMenu() {
+	system("clear");
+	int choice;
+    std::string name;
+	
+	std::cout << "Welcome to N's enemy game. Before starting, please enter a name to give your player.\n\n":
+	std::cout << "Enter a name: ";
+	cin >> name;
+
+}
+
 	std::cout << "Your " << inventory[0].name << " does " << inventory[0].damage << " damage.\n";
 	std::cout << "The zombie is still alive and lunges at you. You are bit by the zombie.\n";
 	std::cout << "What do you want to do?\n\n";
@@ -171,4 +188,9 @@ void runAwayToForest() {
 }
 
 void finalAttempt() {
+	system("clear");
+	int choice;
+
+	std::cout << "You make the final attempt at eliminating the zombie: You successfully do.\n";
+	std::cout << "In the process, your " << inventory[0].name << " breaks. You no longer have any defense.";
 }
