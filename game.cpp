@@ -157,7 +157,7 @@ void preStartMenu() {
 	
 	std::cout << "Welcome to N's enemy game. Before starting, please enter a name to give your player.\n\n":
 	std::cout << "Enter a name: ";
-	cin >> name;
+	std::cin >> name;
 
 }
 
@@ -169,7 +169,7 @@ void preStartMenu() {
 	std::cout << "2. Run away to the forest\n\n";
 	
 	std::cout << "Make your decision: ";
-	cin >> choice;
+    std::cin >> choice;
 
 	if (choice == 1) {
 		finalAttempt();
@@ -185,6 +185,16 @@ void runAwayToForest() {
 	int choice;
 
     std::cout << "You run away to the forest, making a narrow escape from the zombie.\n";
+	std::cout << "As you run away, you reach the end of a cliff where you can look over the whole area.\n";
+	std::cout << "You see villages being burnt down, zombies feeding on people, and warriers killing enemies you've never seen before.\n";
+	std::cout << "What do you want to do first? Choose wisely.\n\n";
+
+	std::cout << "1. Make your way down the cliff\n";
+	std::cout << "2. Look around for a better weapon\n";
+	std::cout << "3. Build a tent made out of leaf for the night\n\n";
+
+	std::cout << "Make your choice: ":
+	std::cin >> choice;
 }
 
 void finalAttempt() {
@@ -193,4 +203,13 @@ void finalAttempt() {
 
 	std::cout << "You make the final attempt at eliminating the zombie: You successfully do.\n";
 	std::cout << "In the process, your " << inventory[0].name << " breaks. You no longer have any defense.";
+}
+
+void goDownCliff() {
+}
+
+void lookForBetterWeapon() {
+}
+
+void setupTent() {
 }

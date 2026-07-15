@@ -10,5 +10,8 @@ void zombieReveal();
 void attackZombieWithWeapon();
 void runAwayToForest();
 void finalAttempt();
+void goDownCliff();
+void lookForBetterWeapon();
+void setupTent();
 
 #endif
