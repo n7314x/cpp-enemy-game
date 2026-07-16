@@ -32,7 +32,7 @@ void takeSword() {
 	sword.name = "Sword";
 	sword.damage = 20;
 
-	std::cout << "You lift the sword from the table. The blade is worn, but still sharp.";
+	std::cout << "You lift the sword from the table. The blade is worn, but still sharp.\n\n";
 	inventory.push_back(sword);
 
 	zombieReveal();
@@ -45,7 +45,7 @@ void takeKnife() {
 	knife.name = "Knife";
 	knife.damage = 10;
 
-	std::cout << "You take the knife and test its weight in your hand. Small, fast, and easy to carry.";
+	std::cout << "You take the knife and test its weight in your hand. Small, fast, and easy to carry.\n\n";
 	inventory.push_back(knife);
 
 	zombieReveal();
@@ -58,7 +58,7 @@ void takeDagger() {
 	dagger.name = "Dagger";
 	dagger.damage = 15;
 
-	std::cout << "You grab the dagger. Its dark blade catches the lantern light.";
+	std::cout << "You grab the dagger. Its dark blade catches the lantern light.\n\n";
 	inventory.push_back(dagger);
 
 	zombieReveal();
@@ -71,7 +71,7 @@ void takeAxe() {
 	axe.name = "Axe";
 	axe.damage = 30;
 
-	std::cout << "You pull the axe from the table. Heavy, but one clean hit should do serious damage.";
+	std::cout << "You pull the axe from the table. Heavy, but one clean hit should do serious damage.\n\n";
 	inventory.push_back(axe);
 
 	zombieReveal();
@@ -82,7 +82,7 @@ void gameStart() {
 	int choice;
 
 	std::cout << "You wake to the sound of something scratching against the cabin door.\n";
-	std::cout << "The room is dark. The windows are boarded shut, and a weak lantern flickers beside you. Outside, something lets out a low, broken growl\n";
+	std::cout << "The room is dark. The windows are boarded shut, and a weak lantern flickers beside you. Outside, something lets out a low, broken growl.\n";
 	std::cout << "On a wooden table nearby, four weapons have been left behind. The scratching at the door grows louder.\n";
 	std::cout << "Choose a weapon quickly.\n\n";
 
@@ -119,8 +119,8 @@ void zombieReveal() {
 
 	Enemy zombie;
 	zombie.name = "Zombie";
-	zombie.health = 25;
-	zombie.damage = 30;
+	zombie.health = 30;
+	zombie.damage = 25;
 
 	std::cout << "The door breaks open. A zombie walks through, looking around.\n";
 	std::cout << "The zombie sees you and rushes towards you. What are you going to do?\n\n";
@@ -140,33 +140,24 @@ void zombieReveal() {
 	}
 }
 
+
 void attackZombieWithWeapon() {
 	system("clear");
 	int choice;
 
 	Player player;
-	player.health = 75
+	Enemy zombie;
+	player.health = 75;
 
-	std::cout << "Your health: " << player.health << '\n\n';
+	std::cout << "Player health: " << player.health << "\n";
+	std::cout << "Weapon damage: " << inventory[0].damage << "\n\n";
 
     std::cout << "You make an attempt to attack the zombie with your " << inventory[0].name << ".\n";
-void preStartMenu() {
-	system("clear");
-	int choice;
-    std::string name;
-	
-	std::cout << "Welcome to N's enemy game. Before starting, please enter a name to give your player.\n\n":
-	std::cout << "Enter a name: ";
-	std::cin >> name;
 
-}
+	std::cout << "The zombie is still alive and lunges at you. You are bit by the zombie. What do you want to do?\n\n";
 
-	std::cout << "Your " << inventory[0].name << " does " << inventory[0].damage << " damage.\n";
-	std::cout << "The zombie is still alive and lunges at you. You are bit by the zombie.\n";
-	std::cout << "What do you want to do?\n\n";
-
-	std::cout << "1. Make one more attempt at killing the zombie\n";
-	std::cout << "2. Run away to the forest\n\n";
+	std::cout << "1. Make a final attempt at killing the zombie\n";
+	std::cout << "2. Make a narrow escape to the forest\n\n";
 	
 	std::cout << "Make your decision: ";
     std::cin >> choice;
@@ -179,6 +170,13 @@ void preStartMenu() {
 		std::cout << "Invalid choice";
 	}
 }
+void finalAttempt() {
+	system("clear");
+	int choice;
+
+	std::cout << "You make the final attempt at eliminating the zombie: You succeed.\n";
+	std::cout << "In the process, your " << inventory[0].name << " breaks. You no longer have any defense.\n\n";
+}
 
 void runAwayToForest() {
 	system("clear");
@@ -189,27 +187,60 @@ void runAwayToForest() {
 	std::cout << "You see villages being burnt down, zombies feeding on people, and warriers killing enemies you've never seen before.\n";
 	std::cout << "What do you want to do first? Choose wisely.\n\n";
 
-	std::cout << "1. Make your way down the cliff\n";
-	std::cout << "2. Look around for a better weapon\n";
-	std::cout << "3. Build a tent made out of leaf for the night\n\n";
+	std::cout << "1. Attempt to descend the cliff\n";
+	std::cout << "2. Search for a new defense tool\n";
+	std::cout << "3. Build a temporary tent for the night\n\n";
 
-	std::cout << "Make your choice: ":
+	std::cout << "Make your choice: ";
 	std::cin >> choice;
+
+	switch (choice) {
+		case 1:
+			descendCliff();
+		case 2:
+			searchForDefense();
+		case 3:
+			buildTempTent();
+		default:
+			std::cout << "Invalid choice";
+	}
 }
 
-void finalAttempt() {
+void descendCliff() {
 	system("clear");
 	int choice;
 
-	std::cout << "You make the final attempt at eliminating the zombie: You successfully do.\n";
-	std::cout << "In the process, your " << inventory[0].name << " breaks. You no longer have any defense.";
+	std::cout << "As your descend the cliff, ";
 }
 
-void goDownCliff() {
+void searchForDefense() {
+	system("clear");
+	int choice;
+	
+	std::cout << "You decide to look around for a new weapon. You find a hatchet.\n\n";
+
+	std::cout << "1. Keep weapon\n";
+	std::cout << "2. Discard it and look for something better\n\n";
+
+	std::cout << "Make a choice: ";
+	std::cin >> choice;
+
+	if (choice == 1) {
+		keepWeapon();
+	} else if (choice == 2) {
+		discardWeapon();
+	} else {
+		std::cout << "Invalid choice";
+	}
 }
 
-void lookForBetterWeapon() {
+void buildTempTent() {
+	system("clear");
+	int choice;
 }
 
-void setupTent() {
+void keepWeapon() {
+}
+
+void discardWeapon() {
 }
