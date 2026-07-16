@@ -197,12 +197,16 @@ void runAwayToForest() {
 	switch (choice) {
 		case 1:
 			descendCliff();
+			break;
 		case 2:
 			searchForDefense();
+			break;
 		case 3:
 			buildTempTent();
+			break;
 		default:
 			std::cout << "Invalid choice";
+			break;
 	}
 }
 
