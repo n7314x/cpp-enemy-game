@@ -212,7 +212,6 @@ void runAwayToForest() {
 
 void descendCliff() {
 	system("clear");
-	int choice;
 
 	std::cout << "As your descend the cliff, ";
 }
@@ -239,8 +238,6 @@ void searchForDefense() {
 }
 
 void buildTempTent() {
-	system("clear");
-	int choice;
 }
 
 void keepWeapon() {
